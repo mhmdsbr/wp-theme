@@ -1,0 +1,282 @@
+@mixin button-default($color: #63c3d1) {
+  // all: unset;
+  color: var(--btn-text);
+  font-size: 1.8rem;
+  background-color: transparent;
+  transition: $transition;
+  cursor: pointer;
+}
+
+%circleModule2 {
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  bottom: .5rem;
+  left: 1rem;
+  background-color: rgba($color: #63C3D1, $alpha: 1.0);
+  border-radius: 3rem;
+  z-index: -1;
+}
+
+button {
+  border-style: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    border-style: none;
+  }
+}
+
+.c-button-module-2 {
+  margin-top: 1%;
+  margin-bottom: 1%;
+  width: 100%;
+  display: block;
+  text-align: center;
+
+  a {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+    z-index: 0;
+    min-height: 5rem;
+    @include button-default($color: #fff);
+    right: 1.7rem;
+
+    .button-circle {
+      @extend %circleModule2;
+
+      &.active {
+        left: calc(100% - 13%);
+      }
+    }
+
+    span {
+
+      &:after {
+        content: url(../images/arrow-shape.svg);
+        position: absolute;
+        left: 16.5rem;
+        transition: $transition;
+
+      }
+    }
+
+    &:hover {
+
+      span {
+        &::after {
+          left: 93%;
+          transition: $transition;
+        }
+      }
+    }
+
+
+  }
+
+
+  @include mq(mobile, desktop) {
+    margin-top: 3rem;
+    width: 56%;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 21rem;
+  }
+
+  a {
+    span:after {
+      @include mq(mobile, desktop) {
+        left: 90%;
+        line-height: 5rem;
+      }
+    }
+  }
+}
+
+@keyframes btn {
+  0% {
+    width: 5rem;
+    left: 20;
+  }
+
+  50% {
+    width: 23rem;
+    left: 0;
+  }
+
+  100% {
+    width: 5rem;
+    left: calc(100% - 3rem);
+  }
+}
+
+
+.o-btn-circle {
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: auto;
+  position: fixed;
+  bottom: 4rem;
+  right: 7rem;
+  cursor: pointer;
+
+  &::before {
+    content: "VIEW";
+    position: absolute;
+    z-index: 9998;
+    font-size: 1.6rem;
+    top: 3rem;
+  }
+
+  &:hover {
+    .btn-circle-1 {
+      background: #4a4194;
+      &::before {
+        visibility: visible;
+      }
+    }
+  }
+}
+
+.wrapper {
+  width: 100px;
+  height: 100px;
+}
+
+.btn-circle-1 {
+  cursor: pointer;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: #63C3D1;
+  border-radius: 50%;
+  animation: rotation 10s linear infinite normal;
+  transition: all 1s linear;
+  &:hover {
+    background: #4a4194;
+    transition: all 1s linear;
+  }
+  &:before {
+    content: "";
+    visibility: hidden;
+    width: 12rem;
+    height: 12rem;
+    transform-origin: center;
+    position: relative;
+    border: 4px solid #63C4D2;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    // border-bottom-color: transparent;
+    // border-right-color: transparent;
+    border-radius: 50%;
+    bottom: 1rem;
+    right: 1rem;
+    transform: rotate(200deg);
+    display: flex;
+    // animation: rotation 10s linear infinite normal;
+  }
+}
+
+.circle {
+  width: .9rem;
+  height: .9rem;
+  font-size: 1.4rem;
+  font-family: $firaSans;
+  text-align: center;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-10%, -10%);
+  text-transform: uppercase;
+}
+
+.circlesHolder {
+  left: 50px;
+  top: 50px;
+  position: absolute;
+  animation: rotation 10s linear infinite normal;
+
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotation-border {
+  0% {
+    transform: rotate(0deg) translate(73px, 45px);
+  }
+
+  25% {
+    transform: rotate(90deg) translate(73px, 45px);
+  }
+
+  50% {
+    transform: rotate(180deg) translate(73px, 45px);
+  }
+
+  100% {
+    transform: rotate(360deg) translate(73px, 45px);
+  }
+}
+
+
+
+@keyframes wiggleWiggle {
+
+  20%,
+  100% {
+    transform: translate(-4rem, 5rem) rotate(270deg);
+    /* stay on the baseline for most of the animation duration */
+  }
+
+  0% {
+    transform: translate(2rem, 4rem) rotate(270deg);
+    /* hop up */
+  }
+
+  10% {
+    transform: translate(-4rem, 5rem) rotate(270deg);
+    /* return to baseline */
+  }
+}
+@keyframes wiggleWiggle-2 {
+
+  20%,
+  100% {
+    transform: translate(-4rem, 5rem) rotate(270deg);
+    /* stay on the baseline for most of the animation duration */
+  }
+
+  0% {
+    transform: translate(2rem, 4rem) rotate(270deg);
+    /* hop up */
+  }
+
+  10% {
+    transform: translate(-4rem, 5rem) rotate(270deg);
+    /* return to baseline */
+  }
+}
+.anim-in {
+  animation: wiggleWiggle 2s linear 1 forwards;
+}
+
+.anim-out {
+  animation: wiggleWiggle 2s linear 1 reverse;
+}

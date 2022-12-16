@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-EN">
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag("js", new Date());
+
+    gtag("config", "UA-XXXXXX-X");
+  </script>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Development Single Page</title>
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no" />
+
+  <!-- Web Application Manifest -->
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="application-name" content="Bugloos.nl" />
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-title" content="Bugloos.nl" />
+
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="mstile-150x150.png" />
+  <meta name="msapplication-TileColor" content="#3c3ce5" />
+
+  <!-- Color the status bar on mobile devices -->
+  <meta name="theme-color" content="#ffffff" />
+
+  <!-- build:css styles/vendor.min.css -->
+  <link rel="stylesheet" href="/node_modules/vanillajs-datepicker/dist/css/datepicker.min.css" />
+  <link href="/node_modules/flickity/dist/flickity.min.css" rel="stylesheet" />
+  <!-- endbuild -->
+  <!-- build:css styles/main.min.css -->
+  <link rel="stylesheet" href="styles/main.css" />
+  <!-- endbuild -->
+</head>
+
+<body style="overflow-y: scroll">
+  <input class="theme-switch" type="checkbox" id="theme-switch">
+  <div id="page" class="main-container container-fluid g-0">
+    <header class="c-header no-gutters u-flex justify-content-center align-items-center">
+      <div class="c-header__col o-logo no-gutters u-flex--center col-3">
+        <a class="o-logo__link" href="#">
+          <img src="/images/header-logo.svg" alt="Logo" />
+        </a>
+      </div>
+      <nav aria-label="primary-menu" class="c-header__col u-flex--center o-p--nav col-6">
+        <div class="u-nav__slider-icon">
+          <svg width="41" height="10" viewBox="0 0 41 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M40.2083 0.324707H0.208252V3.01302H40.2083V0.324707ZM35.5329 6.98703H4.88357V9.67534H35.5329V6.98703Z"
+              fill="#A7A7A7" />
+          </svg>
+        </div>
+        <div class="nav-menu__items menu-hide">
+          <nav aria-label="inner-menu">
+            <ul>
+              <li><a href="#">Bugloos</a><span></span></li>
+              <li><a href="#">Services</a><span></span></li>
+              <li><a href="#">Trusted by</a><span></span></li>
+              <li><a href="#">Project Discovery</a><span></span></li>
+              <li><a href="#">Job Vacancies</a><span></span></li>
+              <li><a href="/blog.html">Blog</a><span></span></li>
+              <li><a href="#">Contact Us</a><span></span></li>
+            </ul>
+          </nav>
+        </div>
+      </nav>
+      <nav aria-label="secondary-menu" class="c-header__col u-flex--center o-s--nav col-2">
+        <div class="u-nav__secondary-items">
+          <ul>
+            <li>Services</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+      </nav>
+      <div class="c-header__col u-lang-swticher no-gutters col-1">
+        <ul>
+          <li>EN</li>
+          <li>NL</li>
+        </ul>
+      </div>
+    </header>
+    <div class="u-home__bg--secondary">
+      <div style="z-index: -1;position: absolute;height: 100%;width: 100%;" id="particles-js-30"></div>
+      <iframe width="100%" height="100%" src="./lottie-wave.html" style="z-index: 9998;position: relative;"
+        title=""></iframe>
+    </div>
+    <section class="c-web-development u-flex u-flex--column">
+      <section>
+        <div class="main-header">
+          Customized software is our standard
+        </div>
+        <div class="banner-image banner-image-first"></div>
+        <div class="main-text">
+          <p>
+            If standard software was enough for you, you would never have sifted through Zanemoon's services in search
+            of
+            solutions. Then you were now sitting with your nose in Excel, or you were wandering around in the jungle of
+            WordPress plugins. Not that there's anything wrong with standard software, except...so much is missing.
+          </p>
+          <p>
+            You are looking for more, faster, better. Fortunately, custom software is our standard.
+          </p>
+          <p class="blue-text">Have standard software adjusted?</p>
+          <p>
+            It is possible that the standard software package you use is almost perfect. You can also turn to Zanemoon
+            for
+            the last step for the perfect package. We develop the software without tinkering with what already works for
+            you.
+          </p>
+        </div>
+
+        <div class="main-header">
+          Customization, easy
+        </div>
+        <div class="banner-image banner-image-second"></div>
+        <div class="main-text">
+          <p>
+            Customization, without the price tag.
+            Guard! You read this and think: 'Nice, but customization – that's too precious for me.' Before you click any
+            further, give us a moment.
+          </p>
+          <p>
+            Because, you see: we deliver tailor-made solutions, not tailor-made suits. Our final solution may be
+            tailor-made, but by using our extensive library of standard (you got that word again) software components,
+            we
+            deliver our custom software at low prices.
+          </p>
+          <p class="blue-text">
+            Customization, without the fitting and measuring.
+          </p>
+          <p>
+            Thanks to the same library of software components and the rapid cooperation of our development teams, we
+            also
+            develop your custom software on time. So you don't have to worry about schedules and processes.
+          </p>
+        </div>
+      </section>
+
+      <section id="Gapstars">
+        <div class="sub-header">
+          Build your own team in the Gapstars community
+        </div>
+        <div class="card-container d-flex flex-wrap u-flex--row u-flex--center justify-content-between">
+          <div class="card px-0">
+            <img class="card-img-top" src="./images/pages/staff-single/1.png" alt="Card image cap">
+            <div class="card-body">
+              <div class="card-title">Bottom-line</div>
+              <p class="card-text">
+                We offer the affordability of an offshore team. Our partners experience up to 40% improvement compared
+                to
+                the local market. Check out the Gapstars Calculator to see how much you can save.
+              </p>
+            </div>
+          </div>
+          <div class="card px-0">
+            <img class="card-img-top" src="./images/pages/staff-single/2.png" alt="Card image cap">
+            <div class="card-body">
+              <div class="card-title">Great place to work</div>
+              <p class="card-text">
+                Awesome talent deserves a great place to work. We offer a highly stimulating environment including a
+                comfortable workspace and high-end hardware. Your developers are supported by our HR team on a daily
+                basis.
+              </p>
+            </div>
+          </div>
+          <div class="card px-0">
+            <img class="card-img-top" src="./images/pages/staff-single/3.png" alt="Card image cap">
+            <div class="card-body">
+              <div class="card-title">Operational support</div>
+              <p class="card-text">
+                We will guide you and your team towards a smooth operation and make sure to facilitate an optimal
+                environment for cooperation. We organize visas, hotels, flights, you named it. This way you and your
+                developers can focus on building great software.
+              </p>
+            </div>
+          </div>
+          <div class="card px-0">
+            <img class="card-img-top" src="./images/pages/staff-single/4.png" alt="Card image cap">
+            <div class="card-body">
+              <div class="card-title">Tech community</div>
+              <p class="card-text">
+                We connect and enable the key figures in the local community. We hold and attend regular events to boost
+                presence in technical areas of expertise. We expose, showcase and invite talent to connect with Gapstars
+                and your company and brand. to focus your goals.
+              </p>
+            </div>
+          </div>
+          <div class="card px-0">
+            <img class="card-img-top" src="./images/pages/staff-single/5.png" alt="Card image cap">
+            <div class="card-body">
+              <div class="card-title">Network of experts</div>
+              <p class="card-text">
+                You are not alone. We boost a network of highly experienced entrepreneurs and CTOs that know how to
+                build
+                teams and get the right stuff done. Become part of our vibrant community and work side-by-side other
+                ambitious organisations.
+              </p>
+            </div>
+          </div>
+          <div class="card px-0">
+            <img class="card-img-top" src="./images/pages/staff-single/6.png" alt="Card image cap">
+            <div class="card-body">
+              <div class="card-title">Strong software and relationships</div>
+              <p class="card-text">
+                Working with different cultures and remote teams requires special attention. Only developers that are an
+                integral part of your team are willing to go the extra mile. We help you enable growth by focusing on
+                employee integration.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="slider">
+        <div class="main-header">
+          Extended Team model
+        </div>
+        <div class="extended-sub-header">
+          Why our partners prefer our Extended Team model over standard outsourcing:
+        </div>
+
+        <div class="u-flex u-flex--row u-flex--center c-web-development__slider-wrapper">
+          <div class="u-flex u-flex--column c-web-development__slider_items">
+            <div class="u-flex u-flex--row c-web-development__desc-container">
+              <div class="col-3 c-web-development__desc">
+                <h4>Dedicated recruitment</h4>
+                <div class="c-web-development__img">
+                  <img src="images/icon/recruitment.svg" alt=""/>
+                </div>
+              </div>
+              <p class="col-9 main-content">
+                In this stage, we get to know each other. In an interview, it will be clear what your company does and looks like, what the core of the application is and what target group(s) and objectives are involved. In the requirement analysis, we establish global outlines, so that we can focus on the parts that provide you with the most value.
+                Based on the requirement analysis, we select the appropriate project discovery program, create an action plan for the project discovery and, if desired, sign a non disclosure agreement, so that you are sure that your idea remains your own.
+
+              </p>
+            </div>
+          </div>
+          <div class="u-flex u-flex--column c-web-development__slider_items">
+            <div class="u-flex u-flex--row c-web-development__desc-container">
+              <div class="col-3 c-web-development__desc">
+                <h4>Dedicated recruitment</h4>
+                <div class="c-web-development__img">
+                  <img src="images/icon/recruitment.svg" alt=""/>
+                </div>
+              </div>
+              <p class="col-9 main-content">
+                In this stage, we get to know each other. In an interview, it will be clear what your company does and looks like, what the core of the application is and what target group(s) and objectives are involved. In the requirement analysis, we establish global outlines, so that we can focus on the parts that provide you with the most value.
+                Based on the requirement analysis, we select the appropriate project discovery program, create an action plan for the project discovery and, if desired, sign a non disclosure agreement, so that you are sure that your idea remains your own.
+
+              </p>
+            </div>
+          </div>
+          <div class="u-flex u-flex--column c-web-development__slider_items">
+            <div class="u-flex u-flex--row c-web-development__desc-container">
+              <div class="col-3 c-web-development__desc">
+                <h4>Dedicated recruitment</h4>
+                <div class="c-web-development__img">
+                  <img src="images/icon/recruitment.svg" alt=""/>
+                </div>
+              </div>
+              <p class="col-9 main-content">
+                In this stage, we get to know each other. In an interview, it will be clear what your company does and looks like, what the core of the application is and what target group(s) and objectives are involved. In the requirement analysis, we establish global outlines, so that we can focus on the parts that provide you with the most value.
+                Based on the requirement analysis, we select the appropriate project discovery program, create an action plan for the project discovery and, if desired, sign a non disclosure agreement, so that you are sure that your idea remains your own.
+
+              </p>
+            </div>
+          </div>
+          <div class="u-flex u-flex--column c-web-development__slider_items">
+            <div class="u-flex u-flex--row c-web-development__desc-container">
+              <div class="col-3 c-web-development__desc">
+                <h4>Dedicated recruitment</h4>
+                <div class="c-web-development__img">
+                  <img src="images/icon/recruitment.svg" alt=""/>
+                </div>
+              </div>
+              <p class="col-9 main-content">
+                In this stage, we get to know each other. In an interview, it will be clear what your company does and looks like, what the core of the application is and what target group(s) and objectives are involved. In the requirement analysis, we establish global outlines, so that we can focus on the parts that provide you with the most value.
+                Based on the requirement analysis, we select the appropriate project discovery program, create an action plan for the project discovery and, if desired, sign a non disclosure agreement, so that you are sure that your idea remains your own.
+
+              </p>
+            </div>
+          </div>
+          <div class="u-flex u-flex--column c-web-development__slider_items">
+            <div class="u-flex u-flex--row c-web-development__desc-container">
+              <div class="col-3 c-web-development__desc">
+                <h4>Dedicated recruitment</h4>
+                <div class="c-web-development__img">
+                  <img src="images/icon/recruitment.svg" alt=""/>
+                </div>
+              </div>
+              <p class="col-9 main-content">
+                In this stage, we get to know each other. In an interview, it will be clear what your company does and looks like, what the core of the application is and what target group(s) and objectives are involved. In the requirement analysis, we establish global outlines, so that we can focus on the parts that provide you with the most value.
+                Based on the requirement analysis, we select the appropriate project discovery program, create an action plan for the project discovery and, if desired, sign a non disclosure agreement, so that you are sure that your idea remains your own.
+
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="c-page-sections--js c-our-services">
+        <div class="u-flex u-flex--column o-title">
+          <h1 class="e-default-title">
+            Calculate costs
+          </h1>
+          <p>
+            Use this calculator to compare the costs of a team of local developers with the costs of a dedicated team of
+            developers from Zanemoon. After completing the form, you will receive a savings overview from us in your
+            mailbox.
+          </p>
+        </div>
+        <div class="wrapper">
+          <div class="u-flex u-flex--center o-our-services__content">
+            <article class="col-5 col-sm-4">
+              <img src="images/our-services/website-icon.svg" alt="Web">
+              <h5>Web Development</h5>
+              <p>Mobile app, website design, etc.</p>
+            </article>
+            <article class="col-5 col-sm-4">
+              <img src="images/our-services/ui-icon.svg" alt="UI//UX">
+              <h5>Mobile Application</h5>
+              <p>Mobile app, website design, etc.</p>
+            </article>
+            <article class="col-5 col-sm-4">
+              <img src="images/our-services/web-icon.svg" alt="Website">
+              <h5>Website Development</h5>
+              <p>Mobile app, website design, etc.</p>
+            </article>
+          </div>
+          <div class="u-flex u-flex--center o-our-services__content content--margin">
+            <article class="col-5 col-sm-4">
+              <img src="images/our-services/staff-icon.svg" alt="Staff">
+              <h5>Staff Augmentation</h5>
+              <p>Mobile app, website design, etc.</p>
+            </article>
+            <article class="col-5 col-sm-4">
+              <img src="images/our-services/mobile-icon.svg" alt="Mobile">
+              <h5>Mobile Application</h5>
+              <p>Mobile app, website design, etc.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="u-flex u-flex--column o-title">
+          <h1 class="e-default-title">
+            Contact
+          </h1>
+          <p>
+            6 STEPS AND A FEASIBLE PLAN WITHIN ONE MONTH
+          </p>
+        </div>
+        <div class="u-flex u-flex--row u-flex--center c-companies__slider-wrapper">
+          <div class="u-flex u-flex--column c-companies__slider_items">
+            <div class="u-flex u-flex--row c-companies__desc-container flex-nowrap">
+              <div class="c-companies__desc col-12">
+                <h4>Charlotte King</h4>
+                <p>
+                  <span>Chief Executive Officer</span>
+                  <span>CEO of Snow Sports Center Utrecht</span>
+                </p>
+                <p>"Making your ideas of tomorrow possible today?</p>
+                <p>
+                  <span class="blue-text">"Making your ideas of tomorrow possible today?</span>
+                  The Zanemoon team has only been together for a short time, but has already grown into an international
+                  team of more than 50 passionate people. We build your success together with the development of complex
+                  apps , software platforms and an all-in-one approach to development.
+                  <br>
+                  If you are seriously looking to grow further and need custom software for that, then we would like to
+                  get to know you.
+                </p>
+              </div>
+              <div class="c-companies__img">
+                <img src="images/armin.jpg" alt="Armin">
+              </div>
+            </div>
+          </div>
+          <div class="u-flex u-flex--column c-companies__slider_items">
+            <div class="u-flex u-flex--row c-companies__desc-container flex-nowrap">
+              <div class="c-companies__desc col-12">
+                <h4>Daniel Schinkel</h4>
+                <p>CEO of Snow Sports Center Utrecht</p>
+                <p>For my project they were well prepared and well handled. It is a company with complete service.
+                  If
+                  I
+                  still want to develop a new project, I would without a doubt let Bugloos develop again.</p>
+              </div>
+              <div class="c-companies__img">
+                <img src="images/armin.jpg" alt="Armin">
+              </div>
+            </div>
+          </div>
+          <div class="u-flex u-flex--column c-companies__slider_items">
+            <div class="u-flex u-flex--row c-companies__desc-container flex-nowrap">
+              <div class="c-companies__desc col-12">
+                <h4>Daniel Schinkel</h4>
+                <p>CEO of Snow Sports Center Utrecht</p>
+                <p>For my project they were well prepared and well handled. It is a company with complete service.
+                  If
+                  I
+                  still want to develop a new project, I would without a doubt let Bugloos develop again.</p>
+              </div>
+              <div class="c-companies__img">
+                <img src="images/himan.jpg" alt="himan">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="booking">
+        <div class="box-booking u-flex u-flex--column">
+          <h4>Help Us to Set Most Useful Meeting</h4>
+          <label for="full-name">Your Name*</label>
+          <input type="text" id="full-name" name="fullname" required>
+          <label for="copmany">Company Name*</label>
+          <input type="text" id="copmany" name="company">
+          <label for="email">Email*</label>
+          <input type="email" id="email" name="email">
+          <label for="desc">Description</label>
+          <textarea id="desc" name="description"></textarea>
+          <div class="u-flex u-flex--center c-button-module-2" id="close-booking">
+            <a>
+              <em class="button-circle"></em>
+              <span aria-label="hidden">Book Meeting</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="boxes">
+        <div class="box d-flex flex-row justify-content-between">
+          <p>
+            How much time does it take to develop custom software?
+          </p>
+          <div class="plus-container d-flex u-flex--center">
+            <div class="img"></div>
+          </div>
+        </div>
+        <div class="box d-flex flex-row justify-content-between">
+          <p>
+            Is custom software scalable?
+          </p>
+          <div class="plus-container d-flex u-flex--center">
+            <div class="img"></div>
+          </div>
+        </div>
+        <div class="box d-flex flex-row justify-content-between">
+          <p>
+            What are examples of custom software?
+          </p>
+          <div class="plus-container d-flex u-flex--center">
+            <div class="img"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </section>
+  <section class="sections__go-back d-flex flex-row justify-content-center">
+    <div onclick="history.back()" class="go-back  d-flex flex-column align-items-center">
+      <div class="glow">Get Back</div>
+      <img src="images/arrow-left-white.svg" alt="Get Back">
+    </div>
+  </section>
+  <section class="sections__fixed-icons u-flex justify-content-center align-items-end no-gutters col">
+    <div class="u-flex justify-content-center">
+        <article class="e-icons__theme col-10">
+          <label class="switch-label" for="theme-switch"></label>
+        </article>
+        <article id="howler-play2" class="c-icons__sound col-2">
+          <div data-tooltip="Listen to Sound of Universe">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </article>
+      </div>
+    </section>
+    <hr>
+    <div class="o-contact-share u-flex u-flex--row u-flex--center">
+      <img src="images/Facebook.svg" alt="">
+      <img src="images/twitter.svg" alt="">
+      <img src="images/linkedin.svg" alt="">
+      <img src="images/instagram.svg" alt="">
+    </div>
+    <div class="o-contact-year u-flex u-flex--row u-flex--center">
+      <p>
+        2022 Bugloos
+      </p>
+    </div>
+    <div class="wrapper o-btn-circle">
+      <div class="circlesHolder"></div>
+      <div class="btn-circle-1"></div>
+    </div>
+  </div>
+  <!-- build:js scripts/web-development-single-page-vendor.min.js -->
+  <!-- <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="scripts/jquery-migrate-3.0.0.min.js"></script>
+  <script src="/node_modules/slick-carousel/slick/slick.min.js"></script>
+  <script src="scripts/select2.js"></script>
+  <script src="/node_modules/particles.js/particles.js"></script>
+  <script src="/node_modules/flickity/dist/flickity.pkgd.min.js"></script>
+  <script src="/node_modules/howler/dist/howler.min.js"></script> -->
+
+  <!-- endbuild -->
+  <!-- build:js scripts/services.min.js -->
+  <script src="scripts/services.js"></script>
+  <script src="scripts/header.js"></script>
+  <script src="scripts/btn.js"></script>
+  <!-- endbuild -->
+</body>
+
+</html>

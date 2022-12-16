@@ -1,0 +1,412 @@
+
+.c-staff-single {
+  z-index: 0;
+  width: 100%;
+  margin: 13rem auto 2.7rem;
+  min-height: 88vh;
+
+  @include mq(wide) {
+    max-width: 128rem;
+  }
+
+  @include mq(desktop, wide) {
+    max-width: 102.4rem;
+  }
+
+  @include mq(tablet, desktop) {
+    max-width: 92rem;
+  }
+
+  @include mq(mobile, tablet) {
+    max-width: 74rem;
+    margin-top: 2rem;
+  }
+
+  @include mq(mobile, mobileLandscape) {
+    max-width: 57rem;
+    margin-top: 10rem;
+  }
+
+  .header {
+    text-align: center;
+    font-size: 4.8rem;
+    line-height: 4.7rem;
+    color: var(--title-text-color);
+    margin-bottom: 3.7rem;
+  }
+
+  .sub-header {
+    border-bottom: 0.3rem solid $color-blue-0;
+    margin-bottom: 2rem;
+    padding-bottom: 1.8rem;
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 100%;
+    color: var(--title-text-color);
+  }
+
+  #team {
+
+    .img-header {
+      background-image: url('./../../images/projects/bugloosTeam.jpg');
+      height: 53.3rem;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 2rem;
+    }
+
+    p {
+      font-weight: 500;
+      font-size: 1.8rem;
+      line-height: 130%;
+      text-align: justify;
+      color: var(--title-text-color);
+      padding-top: 2.7rem;
+    }
+  }
+
+  #tab {
+    margin-bottom: $margin-between-sections;
+
+    .tab-container {
+      min-height: 16.9rem;
+      gap: 2.1rem;
+
+      @include mq(mobile, lg) {
+        margin-bottom: 1.628rem;
+      }
+
+      .tab-item {
+        width: calc((100% - 3 * 2.1rem) / 4);
+        height: 15.8rem;
+        background: var(--bg-color);
+        opacity: 0.95;
+        border-radius: 2rem;
+        cursor: pointer;
+
+        @include mq(mobile, lg) {
+          width: calc((100% - 2.1rem) / 2);
+          height: 126.56px;
+          border-radius: 15px;
+        }
+
+        .text {
+          font-weight: 500;
+          font-size: 1.8rem;
+          line-height: 2.2rem;
+          text-align: center;
+          color: $color-blue-0;
+          margin-top: 2.456rem;
+        }
+
+        &.is-selected {
+          height: 16.9rem;
+          border-radius: 2rem 2rem 0 0;
+          @include mq(mobile, lg) {
+            height: 15.8rem;
+            border-radius: 2rem;
+          }
+
+          .text {
+            color: var(--service-title-hover);
+          }
+        }
+      }
+    }
+
+    .tab-content {
+      height: 21.2rem;
+      background: var(--bg-color);
+      opacity: 0.95;
+      border-radius: 0 0 2rem 2rem;
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: 130%;
+      text-align: justify;
+      color: var(--title-text-color);
+      padding: 3rem;
+      overflow-y: scroll;
+
+      @include mq(mobile, lg) {
+        border-radius: 15px;
+      }
+    }
+  }
+
+  #Gapstars {
+    margin-bottom: $margin-between-sections;
+
+    .card-container {
+      gap: 2.2rem;
+
+      .card {
+        max-width: 41rem;
+        height: 42.7rem;
+        background: var(--bg-color);
+        border-radius: 2rem;
+        overflow-y: scroll;
+        width: calc((100% - 2.2rem) / 2);
+
+        img {
+          width: 100%;
+          height: 14.1rem;
+          border-radius: 2rem 2rem 0 0;
+        }
+
+        .card-body {
+          padding: 3rem 2.5rem;
+
+          .card-title {
+            font-weight: 500;
+            font-size: 2.4rem;
+            line-height: 3rem;
+            color: var(--title-text-color);
+            margin-bottom: 1.4rem;
+          }
+
+          .card-text {
+            font-size: 1.5rem;
+            line-height: 2.4rem;
+            text-transform: capitalize;
+            color: var(--title-text-color);
+          }
+        }
+      }
+    }
+  }
+
+  #slider {
+    margin-bottom: $margin-between-sections;
+
+    .extended-sub-header {
+      font-weight: 900;
+      font-size: 2.4rem;
+      line-height: 2.4rem;
+      text-align: center;
+      text-transform: lowercase;
+      color: $color-blue-0;
+      margin-bottom: 2.8rem;
+    }
+
+
+    .c-staff__slider-wrapper {
+      width: 100%;
+      max-width: 128rem;
+      height: 48rem;
+      z-index: 0;
+      overflow: hidden;
+      background: $linear-gradient;
+      border-radius: 2.5rem;
+      @include mq(mobile, tablet) {
+        height: 75rem;
+      }
+
+      @include mq(tablet, desktop) {
+        height: 60rem;
+      }
+
+      .flickity-viewport {
+        position: unset;
+      }
+
+      .c-staff__slider_items {
+        .c-staff__desc-container {
+          align-items: baseline;
+          padding: 3rem 1rem 5rem 1rem;
+
+          @include mq(mobile, tablet) {
+            flex-direction: column;
+          }
+
+          .c-staff__desc {
+            font-weight: 700;
+            font-size: 3.6rem;
+            line-height: 4.7rem;
+            text-align: center;
+            color: $color-blue-0;
+
+            @include mq(mobile, tablet) {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: flex-end;
+              flex-direction: row-reverse;
+              max-width: 100%;
+            }
+
+            h4 {
+              font-weight: 700;
+              font-size: 3.6rem;
+              line-height: 4.7rem;
+              color: #63C3D1;
+              text-align: center;
+              margin-bottom: 1rem;
+              @include mq(tablet, desktop) {
+                font-size: 2.6rem;
+              }
+            }
+          }
+
+          .main-content {
+            font-size: 1.8rem;
+            line-height: 3.4rem;
+            color: var(--title-text-color);
+            @include mq(mobile, tablet) {
+              width: 100%;
+              max-width: 100%;
+              padding-top: 2rem;
+            }
+          }
+
+          .c-staff__img {
+            text-align: center;
+            padding-top: 2rem;
+            @include mq(mobile, tablet) {
+              padding-top: 0;
+            }
+
+            img {
+              // width: 8.3rem;
+              @include mq(mobile, tablet) {
+                margin-right: 2rem;
+              }
+            }
+          }
+
+          p {
+            font-weight: 400;
+            font-size: 1.8rem;
+            line-height: 3.4rem;
+          }
+        }
+      }
+
+    }
+
+    .flickity-page-dots {
+      bottom: 4rem;
+      align-items: center;
+
+      .flickity-page-dot {
+        text-indent: initial;
+        width: 2.2rem;
+        height: 2.2rem;
+        border: 0.2rem solid #63C3D1;
+        color: #63C3D1;
+        font-weight: 600;
+        background-color: transparent;
+        font-size: 1.4rem;
+        line-height: 1.4rem;
+
+        &:focus {
+          box-shadow: none;
+        }
+      }
+    }
+
+    .flickity-page-dot.is-selected {
+      width: 4rem;
+      height: 4rem;
+      color: var(--color-dot-selected-slider);
+      border: 0.2rem solid var(--color-dot-selected-slider);
+      font-size: 2.4rem;
+    }
+  }
+
+  #technologies {
+    margin-bottom: $margin-between-sections;
+
+    .technologies-sub-header {
+      font-weight: 500;
+      font-size: 1.8rem;
+      line-height: 2.1rem;
+      text-align: justify;
+      color: $color-purple-5;
+      margin-bottom: 3rem;
+    }
+
+    .tech-container {
+      gap: 2.484rem;
+
+      .tech-box {
+        aspect-ratio: 1 / 1;
+
+        width: calc((100% - 4 * 2.484rem) / 5);
+        background: var(--bg-color);
+        border-radius: 1rem;
+
+        @include mq(mobile, lg) {
+          width: calc((100% - 3 * 2.484rem) / 4);
+        }
+
+        .tech-name {
+          font-weight: 600;
+          font-size: 1.8rem;
+          line-height: 2.6rem;
+          text-align: center;
+          color: $color-blue-0;
+          margin-top: 2.8rem;
+        }
+
+        img {
+          width: 50%;
+        }
+      }
+    }
+  }
+
+  #discovery {
+    .box {
+      height: 15.6rem;
+      background: var(--bg-color);
+      opacity: 0.9;
+      border-radius: 2rem;
+      font-weight: 500;
+      font-size: 1.8rem;
+      line-height: 200%;
+      color: var(--title-text-color);
+      padding-left: 2.8rem;
+      padding-right: 2.8rem;
+
+      .btn-discovery {
+        min-width: 29rem;
+      }
+
+      .c-button-module-2 {
+        text-align: right;
+
+
+        @include mq(mobile, lg) {
+          text-align: center;
+        }
+
+        button {
+          max-width: 20rem;
+
+          span:after {
+            left: 18rem;
+          }
+
+          &:hover {
+            span {
+              &::after {
+                left: 93%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .text-center {
+    text-align: center !important;
+  }
+
+  @media (min-width: 980px) {
+    .text-lg-start {
+      text-align: left !important;
+    }
+  }
+}

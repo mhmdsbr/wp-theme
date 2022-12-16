@@ -1,0 +1,102 @@
+.e-default-title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3.2rem;
+    line-height: 4rem;
+    /* identical to box height, or 50% */
+    text-transform: capitalize;
+    font-feature-settings: 'calt' off, 'kern' off;
+    color: var(--title-text-color);
+    text-align: center;
+    z-index: inherit;
+
+    @include mq(mobile, tablet) {
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.o-title__crew {
+    position: absolute;
+    left: 50%;
+    transform: translate(-40%, -45%);
+    z-index: 1;
+    text-align: center;
+    top: 5%;
+
+    @include mq(desktop, wide) {
+        top: 10%;
+    }
+
+    @include mq(md, desktop) {
+        top: 20%;
+        left: 55%;
+    }
+
+    @include mq(mobile, md) {
+        top: 30%;
+        left: 50%;
+    }
+    @include mq(mobile, sm) {
+        top: 30%;
+        left: 45%;
+    }
+
+    &:before {
+        content: '53';
+        position: relative;
+        top: 23.9rem;
+        font-size: 14.4rem;
+        right: 26.8rem;
+        color: var(--title-text-color);
+
+        @include mq(sm, md) {
+            font-size: 10rem;
+            top: 18rem;
+            right: 25rem
+        }
+
+        @include mq(mobile, sm) {
+            font-size: 10rem;
+            top: 6rem;
+            right: 3rem
+        }
+    }
+
+    p {
+        position: relative;
+        margin: 0;
+        right: 8rem;
+        top: 2rem;
+        padding: .5rem;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--title-text-color);
+        @include mq(mobile, sm) {
+            right: 0;
+            font-size: 1.8rem;
+        }
+    }
+
+    .e-title__crew {
+        font-size: 5.5rem;
+        margin: 0;
+        color: var(--title-text-color);
+
+        @include mq(md, lg) {
+            font-size: 5rem;
+        }
+
+        @include mq(mobile, sm) {
+            font-size: 4rem;
+            text-align: left;
+        }
+    }
+
+    @include mq(sm) {
+        .e-title__crew:first-child {
+            position: relative;
+            right: 3.6rem;
+        }
+    }
+}

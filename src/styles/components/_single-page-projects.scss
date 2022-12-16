@@ -1,0 +1,217 @@
+
+.c-single {
+  z-index: 0;
+  margin: 13rem auto 2.7rem;
+  height: 70rem;
+  overflow-y: scroll;
+
+  @include mq(mobile, lg) {
+    height: 125rem;
+  }
+
+  @include mq(wide) {
+    max-width: 128rem;
+  }
+
+  @include mq(desktop, wide) {
+    max-width: 102.4rem;
+  }
+
+  @include mq(tablet, desktop) {
+    max-width: 92rem;
+  }
+
+  @include mq(mobileLandscape, tablet) {
+    max-width: 74rem;
+    margin-top: 2rem;
+    height: 156rem;
+  }
+
+  @include mq(mobile, mobileLandscape) {
+    height: 172rem;
+    max-width: 45rem;
+  }
+
+  &__slider-wrapper {
+    width: 100%;
+    height: 100%;
+    max-width: 1280px;
+    overflow: hidden;
+
+    .flickity-viewport {
+      position: unset;
+      height: 100% !important;
+
+      .c-single__slider_items {
+        border-radius: $border-radius-3;
+        height: 100%;
+        width: 100%;
+
+        @include mq(mobile, desktop) {
+          justify-content: flex-end;
+          line-height: 1.6rem;
+          text-align: center;
+        }
+
+
+        .col-lg-5.u-flex--column {
+          gap: 2rem;
+        }
+
+        .tag-container {
+          gap: 1rem;
+
+          .tag {
+            background: $color-blue-0;
+            border: 0.918551px solid $color-blue-0;
+            border-radius: $border-radius-0;
+            font-size: 2.4rem;
+            line-height: 20px;
+            display: inline-block;
+            padding: 0.9rem 1.5rem 0.7rem 1.4rem;
+          }
+
+          @include mq(mobile, desktop) {
+            justify-content: center;
+          }
+        }
+
+        .project-title {
+          font-size: 4.8rem;
+          line-height: 48px;
+          color: var(--title-text-color);
+
+          @include mq(mobile, lg) {
+            text-align: center;
+          }
+        }
+
+        .project-desc {
+          font-size: 1.8rem;
+          line-height: 34px;
+          text-align: justify;
+          color: var(--title-text-color);
+          overflow-y: scroll;
+          height: 51.5rem;
+          @include mq(mobile, lg) {
+            text-align: center;
+          }
+        }
+
+        .image-container {
+          display: grid;
+          grid-template-columns: repeat(2, auto);
+          gap: 2.7rem;
+          justify-content: end;
+          height: 90%;
+          @include mq(mobile, lg) {
+            height: 28.9rem;
+            justify-content: center;
+          }
+
+          img {
+            height: 100%;
+            border-radius: $border-radius-0;
+
+            &:nth-child(3) {
+              grid-row: 1/3;
+              justify-self: end;
+            }
+          }
+        }
+
+        .testimonial-container {
+          width: 70%;
+          background: rgb(48 58 92 / 95%);
+          box-shadow: 50px 50px 100px rgba(0, 0, 0, 0.145947);
+          border-radius: $border-radius-1;
+          padding: 23px 16px;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+
+          @include mq(mobile, lg) {
+            bottom: auto;
+            top: 93%;
+          }
+
+          em {
+            font-size: 1.8rem;
+            line-height: 34px;
+            text-align: justify;
+            color: $color-white-4;
+          }
+
+          .owner-info {
+            justify-content: center;
+          }
+
+          .owner-image {
+            width: 38.15px;
+            height: 38.15px;
+          }
+
+          .owner-name {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 24px;
+
+            color: #FFFFFF;
+          }
+
+          .company-name {
+            font-size: 1.4rem;
+            line-height: 21px;
+            color: #FFFFFF;
+          }
+        }
+      }
+    }
+
+  }
+
+  .arrow-container {
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-top: -3rem;
+
+    @include mq(mobile, lg) {
+      margin-bottom: 2rem;
+      justify-content: center;
+    }
+
+    .next-btn, .prev-btn {
+      cursor: pointer;
+
+      &:after {
+        content: url('./../../images/arrow-right-white.svg');
+      }
+
+      &-disable:after {
+        content: url('./../../images/arrow-right-gray.svg');
+      }
+    }
+
+    .prev-btn {
+      cursor: pointer;
+
+      &:after {
+        content: url('./../../images/arrow-left-white.svg');
+      }
+
+      &-disable:after {
+        content: url('./../../images/arrow-left-gray.svg');
+      }
+    }
+
+    .hide {
+      display: none;
+    }
+  }
+
+  @include mq(mobile, lg) {
+    margin-top: 10rem;
+  }
+}

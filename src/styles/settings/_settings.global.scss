@@ -1,0 +1,23 @@
+///* ========================================================================
+//   #GLOBAL
+//   ======================================================================== */
+
+// The global settings file contains any project-wide variables; things that
+// need to be made available to the entire codebase.
+
+// Standardise some UI treatments.
+
+$global-radius: 3px !default;
+//$global-transition: all 300ms ease-in-out !default;
+$inuit-static-images: false;
+$inuit-global-font-size: 10px;
+$firaSans: 'Fira Sans Regular';
+$playfair: 'Playfair Display', serif;
+$text-color: #fff;
+$transition: all 300ms ease;
+// Colors
+$font-color-gray: #A7A7A7;
+$font-color-navy-blue: #181B48;
+$blue-hover: #63C3D1;
+$purple-hover: #7C6EB0;
+$grey-purplish: #616173;

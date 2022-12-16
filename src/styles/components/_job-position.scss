@@ -1,0 +1,84 @@
+.c-job-position {
+    z-index: 0;
+    width: 100%;
+    margin: auto auto 2.7rem;
+    @include no-select;
+
+    @include mq(wide) {
+        max-width: 128rem;
+    }
+
+    @include mq(desktop, wide) {
+        max-width: 102.4rem;
+    }
+
+    @include mq(tablet, desktop) {
+        max-width: 92rem;
+    }
+
+    @include mq(mobile, tablet) {
+        max-width: 74rem;
+        margin-top: 2rem;
+    }
+
+    .job-position__desc {
+        background-color: var(--bg-color);
+        color: var(--title-text-color);
+        z-index: inherit;
+        height: 70vh;
+        border-radius: 2rem;
+        padding: 5rem;
+        overflow-y: scroll;
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+
+        /* Firefox */
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        @include mq(mobile, tablet) {
+            margin-left: 2rem;
+            margin-right: 2rem;
+        }
+
+        h5 {
+            z-index: inherit;
+            margin-top: 0;
+            margin-bottom: .5rem;
+            color: #63C3D1;
+        }
+
+        p {
+            z-index: inherit;
+            font-weight: 400;
+            font-size: 1.6rem;
+        }
+
+        ul {
+            z-index: inherit;
+            margin-left: 0;
+            padding-left: 1.6rem;
+            font-size: 1.6rem;
+        }
+    }
+
+    .c-button-module-2 {
+        margin-top: 0;
+
+        button {
+            max-width: 21rem;
+            span {
+                &:after {
+                    left: 18.5rem;
+                }
+            }
+        }
+    }
+
+}
+hr {
+  margin-right: auto;
+  margin-left: auto;
+}

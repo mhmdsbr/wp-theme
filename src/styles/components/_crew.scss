@@ -1,0 +1,69 @@
+@mixin crew-position($coordinateX: 0, $coordinateY: 0) {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: $coordinateX;
+  top: $coordinateY;
+  overflow: hidden;
+  width: 100%;
+}
+.c-crew-module {
+        justify-content: flex-end;
+          @include no-select;
+  .o-crew--container {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    z-index: 0;
+    flex-direction: row;
+    align-items: baseline;
+    position: relative;
+    bottom: 0;
+    @include mq(mobile, md) {
+      width: 230%;
+    }
+    .member {
+      overflow: hidden;
+      animation-duration: 8s;
+    }
+    .member:nth-child(1) {
+      @include crew-position($coordinateX: 37%, $coordinateY: 0);
+      z-index: 2;
+    }
+    .member:nth-child(2) {
+      @include crew-position($coordinateX: 18%, $coordinateY: 0);
+
+    }
+    .member:nth-child(3) {
+      @include crew-position($coordinateX: 2%, $coordinateY: 0);
+    }
+    .member:nth-child(4) {
+      @include crew-position($coordinateX: -19%, $coordinateY: 0);
+      z-index: 2;
+    }
+    .member:nth-child(5) {
+      @include crew-position($coordinateX: -5%, $coordinateY: 0);
+    }
+    .member:nth-child(6) {
+      @include crew-position($coordinateX: -8%, $coordinateY: 0);
+
+    }
+    .member:nth-child(7) {
+      @include crew-position($coordinateX: -14%, $coordinateY: 0);
+    }
+    .member:nth-child(8) {
+      @include crew-position($coordinateX: -20%, $coordinateY: 0);
+    }
+  }
+}
+.reveal{
+      animation-name: team-animation-up;
+}
+.conceal{
+      animation-iteration-count: infinite;
+      animation-name: team-animation-down;
+      
+}
+
+
+

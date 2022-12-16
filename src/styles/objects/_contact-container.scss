@@ -1,0 +1,149 @@
+@mixin contact-icons {
+    position: relative;
+    top: 6px;
+    right: 10px;
+}
+
+.o-contact-module {
+    width: 100%;
+    max-width: 128rem;
+    align-items: flex-start;
+    margin: 1rem auto 2.7rem;
+
+    @include mq(wide) {
+        max-width: 128rem;
+    }
+
+    @include mq(desktop, wide) {
+        max-width: 100rem;
+    }
+
+    h5 {
+        display: none;
+        background-color: var(--contact-bg);
+        color: var(--title-text-color);
+        width: 90%;
+        padding: 2rem;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 1.5rem;
+        margin-bottom: 0;
+
+        &:before {
+            content: url("/images/form-mobile.svg");
+            position: relative;
+            margin-right: 1rem;
+        }
+
+        @include mq(mobile, desktop) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .o-contact__wrapper {
+        @include mq(mobile, desktop) {
+            overflow: hidden;
+        }
+    }
+
+    .o-contact__box {
+        height: 31.2rem;
+        width: 49%;
+        background-color: var(--bg-color);
+        border-radius: 1.5rem;
+        padding-left: 2rem;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        font-size: $font-size-main;
+
+        @include mq(mobile, desktop) {
+            width: 90%;
+            height: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h5 {
+            font-weight: 500;
+            color: var(--title-text-color);
+        }
+
+        .contact__phone {
+            color: var(--title-text-color);
+            font-weight: 500;
+
+            &:before {
+                @include contact-icons();
+                content: url("../images/Phone.svg");
+            }
+        }
+
+        .contact__address {
+            color: var(--title-text-color);
+            font-weight: 500;
+
+            &:before {
+                @include contact-icons();
+                content: url("../images/round-place.svg");
+            }
+        }
+        .contact__num {
+            color: var(--title-text-color);
+            font-weight: 500;
+
+        }
+
+        .contact__mail {
+            color: var(--title-text-color);
+            font-weight: 500;
+            position: relative;
+            left: 2px;
+
+            &:before {
+                @include contact-icons();
+                content: url("../images/mail.svg");
+            }
+        }
+    }
+
+    .o-contact__map {
+        width: 49%;
+        margin-right: 2%;
+
+        @include mq(mobile, desktop) {
+            width: 90%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
+
+    iframe {
+        @include mq(mobile, desktop) {
+            height: 20rem;
+        }
+    }
+}
+
+.o-contact-share {
+    img {
+        padding: 1rem 1.2rem;
+    }
+}
+
+.o-contact-year {
+    z-index: 1;
+    width: 100%;
+    font-size: 1.6rem;
+
+    p {
+        color: rgba($color: #63c3d1, $alpha: 0.7);
+        font-weight: 400;
+
+        &:before {
+            content: url("../images/footer-2022.svg");
+        }
+    }
+}
