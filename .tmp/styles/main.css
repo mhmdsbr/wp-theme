@@ -6794,7 +6794,7 @@ hr {
           align-items: center;
 }
 
-.taskForm {
+.taskForm, .task-single {
   position: absolute;
   background-color: wheat;
   top: 50%;
