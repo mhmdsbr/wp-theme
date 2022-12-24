@@ -4,7 +4,6 @@
 @import 'settings/_settings.global';
 @import 'settings/_mq';
 @import 'settings/_fonts.scss';
-@import "settings/_variables.scss";
 
 // TOOLS
 @import '../../node_modules/inuitcss/tools/tools.font-size';
@@ -22,22 +21,14 @@
 @import '../../node_modules/inuitcss/elements/elements.headings';
 @import '../../node_modules/inuitcss/elements/elements.images';
 @import '../../node_modules/inuitcss/elements/elements.tables';
-@import 'elements/_fixed-icons.scss';
 
 @import 'elements/_ie.scss';
 @import 'elements/_defaults.scss';
 @import 'elements/_misc.scss';
-@import 'elements/_title.scss';
 
 // OBJECTS
 @import 'objects/_row.scss';
 @import 'objects/_grid.scss';
-@import 'objects/_title.scss';
-@import 'objects/_form-container.scss';
-@import 'objects/_contact-container.scss';
-@import 'objects/_sweet-popup.scss';
-@import 'objects/_scrollbar.scss';
-@import "objects/_select2.scss";
 // Uncomment and add to this section as necessary.
 // @import "../../node_modules/objects/objects.wrapper";
 // @import "../../node_modules/objects/objects.layout";
@@ -56,42 +47,17 @@
 // UTILITIES
 // @import "utilities/utilities.clearfix";
 @import 'utilities/_flex.scss';
-@import 'utilities/home__bg';
-@import 'utilities/keyframes';
-@import 'utilities/button-default';
-@import 'utilities/particle';
-
 // COMPONENTS
 //
 // Build and include your project’s UI components here.
 //----------------------------------*\
 // Components
 //----------------------------------*/
-@import 'components/_section.scss';
-@import 'components/_button.scss';
-@import 'components/_home__bg-waves';
-@import 'components/_home';
-@import 'components/_our-services.scss';
-@import 'components/_foot-print.scss';
-@import 'components/_time-line';
-@import 'components/_companies';
-@import 'components/_blog-module';
-@import 'components/_crew.scss';
-@import 'components/_blog-page.scss';
-@import 'components/_project-discovery.scss';
-@import 'components/_archive-blog.scss';
-@import 'components/_job-positions.scss';
-@import 'components/_job-position.scss';
-@import 'components/_apply-job.scss';
-@import 'components/_date-time-picker.scss';
-@import 'components/_single-page-projects.scss';
-@import 'components/_mix-match.scss';
-@import 'components/_staff-single-page';
-@import 'components/_UIUX-single-page';
-@import 'components/_web-development-single-page';
-@import 'components/_team-members.scss';
-@import 'components/_team-member.scss';
 
+@import 'components/_home';
+@import 'components/_archive';
+@import 'components/_date-picker';
+@import 'components/_single';
 
 // PARTIALS
 @import 'partials/_header.scss';
@@ -119,3 +85,6 @@
 // @import "utilities/utilities.hide";
 
 /* Global styles come from external css https://codepen.io/GreenSock/pen/JGaKdQ*/
+
+
+

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-EN">
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag("js", new Date());
+
+    gtag("config", "UA-XXXXXX-X");
+  </script>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Project</title>
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no" />
+
+  <!-- Web Application Manifest -->
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="application-name" content="Bugloos.nl" />
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-title" content="Bugloos.nl" />
+
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="mstile-150x150.png" />
+  <meta name="msapplication-TileColor" content="#3c3ce5" />
+
+  <!-- Color the status bar on mobile devices -->
+  <meta name="theme-color" content="#ffffff" />
+  <!-- build:css styles/vendor.min.css -->
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/node_modules/vanillajs-datepicker/dist/css/datepicker.min.css" />
+  <link href="/node_modules/flickity/dist/flickity.min.css" rel="stylesheet" />
+  <!-- endbuild -->
+  <!-- build:css styles/main.min.css -->
+  <link rel="stylesheet" href="styles/main.css" />
+  <!-- endbuild -->
+</head>
+
+<body style="overflow-y: scroll;">
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="./index.html">Task Management</a>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="./index.html">Create a Task</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./archive.html">Tasks list</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./single.html">Task Info</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+</header>
+  <div id="page" class="main-container single-page">
+    <div id="panel" class="container-wrapper u-flex u-flex--center">
+      <section class="c-single--js u-flex u-flex--center c-single">
+        <div class="list-group me-3 single__task-info">
+          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex justify-content-between">
+              <h5 class="mb-1">Task Title</h5>
+              <small>Task Tag</small>
+            </div>
+            <p class="mb-1">Task Desc Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
+              varius blandit.</p>
+            <small>Task status</small>
+          </a> 
+        </div>
+        <div class="status-wrapper">
+          <div class="deadline-wrapper">
+            <h5>
+              Change Task Status
+            </h5>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Open</option>
+              <option value="1">In Progress</option>
+              <option value="2">Done</option>
+            </select>
+          </div>
+          <label class="dateTime-container">
+            <span class="dateTime-title">Change Deadline</span>
+            <span style="cursor:pointer;position: relative;display: flex;">
+              <input type="text" name="datepicker" id="form-date" class="date-picker-main-input" />
+            </span>
+            <span id="timePicker" style="display: none;">
+              <div class="date-picker-divider"></div>
+              <p class="m-0">Enter Time</p>
+              <div class="d-flex align-items-center justify-content-center">
+                <div class="d-flex flex-column time-input" id="hour">
+                  <input type="text" minlength="1" maxlength="2">
+                  <span>Hour</span>
+                </div>
+                <span class="colon">:</span>
+                <div class="d-flex flex-column time-input" id="minute">
+                  <input type="text" minlength="1" maxlength="2">
+                  <span>Minute</span>
+                </div>
+                <div class="d-flex flex-column time-switcher">
+                  <span data-value="AM">AM</span>
+                  <span data-value="PM">PM</span>
+                </div>
+              </div>
+            </span>
+          </label>
+        </div>
+      </section>
+    </div>
+  </div>
+  <!-- build:js scripts/vendor.min.js -->
+  <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="scripts/jquery-migrate-3.0.0.min.js"></script>
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/node_modules/vanillajs-datepicker/dist/js/datepicker-full.min.js"></script>
+  <!-- endbuild -->
+  <!-- build:js scripts/main.min.js -->
+  <script src="scripts/main.js"></script>
+  <script src="scripts/date-time-picker.js"></script>
+  <!-- endbuild -->
+</body>
+
+</html>

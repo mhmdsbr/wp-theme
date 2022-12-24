@@ -1,3 +1,4 @@
+@import "./../variables";
 
 .sections__fixed-icons {
   width: 100%;
@@ -31,17 +32,13 @@
   }
 
   .c-icons__sound {
-    cursor: pointer;
-    z-index: 2;
-
-    &:hover {
-      div {
-        span {
+    &:hover{
+      div{
+        span{
           background-color: $blue-hover;
         }
       }
     }
-
     div {
       float: right;
       text-align: right;
@@ -65,8 +62,6 @@
         border-radius: 15px;
         bottom: 100%;
         display: none;
-        color: #FFF;
-        z-index: 99998;
       }
 
       &:hover {
@@ -125,6 +120,7 @@
   position: -webkit-sticky;
   bottom: 2%;
   z-index: 1;
+  margin: 2rem 0;
 
   .go-back {
     font-weight: 700;
@@ -132,18 +128,15 @@
     line-height: 1.4rem;
     text-align: center;
     text-transform: uppercase;
-    color: var(--title-text-color);
+    color: $color-white-0;
     cursor: pointer;
     backdrop-filter: blur(10px);
     padding: 9px;
     border-radius: 4px;
 
-    .arrow-go-back {
+    img {
+      Width: 16px;
       Height: 16px;
-      width: 67%;
-      background: var(--arrow-left);
-      background-size: cover;
-      padding-top: 5px;
     }
 
     &:hover {

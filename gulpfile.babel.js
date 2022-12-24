@@ -5,6 +5,19 @@
 // You can read more about the new JavaScript features here:
 // https://babeljs.io/docs/learn-es2015/
 
+// import gulpSass from "gulp-sass";
+// import nodeSass from 'node-sass';
+// const { src, dest, parallel, series, watch } = require('gulp');
+// const argv = require('yargs').argv;
+// import { fail } from 'yargs';
+// const imagemin = require('gulp-imagemin');
+// import sass from 'gulp-sass'
+// const del = require('del');
+// var fs = require('fs');
+// const babel = require('gulp-babel');
+// import GulpPackage from 'gulp'
+// const { src, dest, parallel, series, watch} = GulpPackage
+// const $ = require('gulp-load-plugins')();
 
 import del from 'del';
 import babel from 'gulp-babel';
@@ -21,7 +34,6 @@ const reload = browserSync.reload;
 const isProd = argv[2] === '--prod';
 const terser = require('gulp-terser');
 const zipFileName = `bugloos__${pkg.name}__v${pkg.version}`;
-const rename = require('gulp-rename');
 
 // Lint JavaScript
 function lint() {
@@ -46,7 +58,7 @@ function images() {
         ]
       })
     ]))
-    .pipe(dest('assets/images'))
+    .pipe(dest('dist/images'))
     .pipe($.size({ title: 'images' }));
 }
 exports.images = images;
@@ -63,7 +75,7 @@ function copy() {
         dot: true
       }
     )
-    .pipe(dest('assets'))
+    .pipe(dest('dist'))
     .pipe($.size({ title: 'copy' }));
 }
 exports.copy = copy;
@@ -71,7 +83,7 @@ exports.copy = copy;
 // Copy all files at the root level (src)
 function fonts(){
   return src('src/fonts/**/*')
-    .pipe(dest('assets/fonts/'))
+    .pipe(dest('dist/fonts/'))
     .pipe($.size({ title: 'copy fonts' }))
 }
 exports.fonts = fonts;
@@ -79,7 +91,7 @@ exports.fonts = fonts;
 // Copy all files at the root level (src)
 function placeholder(){
   return src('src/images-placeholder/**/*')
-    .pipe(dest('assets/images/'))
+    .pipe(dest('dist/images/'))
     .pipe($.size({ title: 'copy fonts' }));
 }
 
@@ -110,12 +122,7 @@ function styles() {
       }).on('error', sass.logError)
     )
     .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
-    // .pipe($.cssnano('main.css'))
     .pipe($.size({ title: 'styles' }))
-    // .pipe(rename({
-    //   extname: '.min.css'
-    // }))
-    .pipe(dest('assets/styles'))
     .pipe(dest('.tmp/styles'));
 }
 
@@ -127,15 +134,13 @@ exports.styles = styles;
 // `.babelrc` file.
 function scripts() {
   return src([
-    // Note: Since we are not using useref in the scripts build pipeline,
-    //       you need to explicitly list your scripts here in the right order
-    //       to be correctly concatenated
-    './src/scripts/main.js',
-    './src/scripts/date-time-picker.js',
-    './src/scripts/header.js',
-    './src/scripts/btn.js'
-    // Other scripts
-  ])
+      // Note: Since we are not using useref in the scripts build pipeline,
+      //       you need to explicitly list your scripts here in the right order
+      //       to be correctly concatenated
+      './src/scripts/main.js',
+    './src/scripts/date-time-picker.js'
+      // Other scripts
+    ])
     .pipe($.newer('.tmp/scripts'))
     .pipe($.sourcemaps.init())
     .pipe(babel({
@@ -147,7 +152,7 @@ function scripts() {
     .pipe(terser())
     // Output files
     .pipe($.size({ title: 'scripts' }))
-    .pipe(dest('assets/scripts'))
+    .pipe(dest('dist/scripts'))
     .pipe(dest('.tmp/scripts'));
 }
 
@@ -184,7 +189,7 @@ function html() {
       )
       // Output files
       .pipe($.if('*.html', $.size({ title: 'html', showFiles: true })))
-      .pipe(dest('assets'))
+      .pipe(dest('dist'))
   );
 }
 
@@ -192,14 +197,13 @@ exports.html = html;
 
 // Clean output directory
 function clean(cb) {
-  del(['.tmp', 'assets/*', '!assets/.git'], { dot: true });
+  del(['.tmp', 'dist/*', '!dist/.git'], { dot: true });
   cb();
 }
 
 // Clean tmp Directory
 function cleanTempDirectory(cb) {
-  // del(['.tmp'], { dot: true });
-  // del(['assets/*.html'], { dot: true });
+  del(['.tmp'], { dot: true });
   cb()
 }
 
@@ -277,7 +281,7 @@ function servedist() {
     // Note: this uses an unsigned certificate which on first access
     //       will present a certificate warning in the browser.
     // https: true,
-    server: 'assets',
+    server: 'dist',
     port: 3001
   })
 }
@@ -286,29 +290,29 @@ exports.servedist = servedist;
 
 
 // Zip demo files
-// function zip() {
-//   return src('assets/**/*', { dot: true })
-//     .pipe($.zip(`${zipFileName}${isProd ? '__PROD' : ''}.zip`))
-//     .pipe(dest('assets'));
-// }
+function zip() {
+  return src('dist/**/*', { dot: true })
+    .pipe($.zip(`${zipFileName}${isProd ? '__PROD' : ''}.zip`))
+    .pipe(dest('dist'));
+}
 
-// exports.zip = zip;
+exports.zip = zip;
 
 
 // Zip Release files
-// function ziprelease() {
-//   return src('.tmp/release/**/*', { dot: true })
-//     .pipe($.zip(`${zipFileName}.zip`))
-//     .pipe(dest('.tmp'));
-// }
+function ziprelease() {
+  return src('.tmp/release/**/*', { dot: true })
+    .pipe($.zip(`${zipFileName}.zip`))
+    .pipe(dest('.tmp'));
+}
 
-// exports.ziprelease = ziprelease;
+exports.ziprelease = ziprelease;
 
 
 // Build production files, the default task
-exports.default = series(clean, styles, lint, html, scripts, copy, images, fonts);
+exports.default = series(clean, styles, lint, html, scripts, images, copy, fonts, zip);
 
-exports.build = series(clean, styles, html, scripts, copy, images, fonts, cleanTempDirectory);
+exports.build = series(clean, styles, html, scripts, images, copy, fonts, zip, cleanTempDirectory);
 
 /**
  * Generrate release commands

@@ -1,7 +1,7 @@
 .e-default-title {
     font-style: normal;
     font-weight: 400;
-    font-size: 3.2rem;
+    font-size: 3.8rem;
     line-height: 4rem;
     /* identical to box height, or 50% */
     text-transform: capitalize;
@@ -69,12 +69,12 @@
         right: 8rem;
         top: 2rem;
         padding: .5rem;
-        font-size: 1.8rem;
+        font-size: 2.4rem;
         font-weight: 700;
         color: var(--title-text-color);
         @include mq(mobile, sm) {
             right: 0;
-            font-size: 1.8rem;
+            font-size: 2rem;
         }
     }
 

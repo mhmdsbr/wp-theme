@@ -1,0 +1,437 @@
+
+.datepicker-grid {
+    width: 100% !important;
+  }
+  
+  .datepicker-view .days {
+    width: 100%;
+  }
+  
+  .date-picker-main-input {
+    width: 100%;
+  }
+  
+  .datepicker {
+    box-shadow: 0 2px 3px hsl(0deg 0% 4% / 10%), 0 0 0 1px hsl(0deg 0% 4% / 10%);
+    width: 100%;
+    background-color: purple;
+  
+    button {
+      margin: 0;
+      padding: 0;
+    }
+  
+    .datepicker-cell, .datepicker-view .week, .datepicker-view .dow {
+      height: 2rem;
+      line-height: 2rem;
+      font-size: 1rem !important;
+    }
+  
+    .datepicker-picker {
+      background-color: var(--bg-color-drp);
+      padding: 1rem;
+      box-shadow: none;
+      border-radius: 0;
+      width: 100%;
+  
+      span {
+        font-size: 0.9375rem;
+      }
+  
+      .datepicker-cell.selected {
+        background-color: #63C3D1;
+      }
+  
+      .datepicker-cell.today:not(.selected) {
+        background-color: #7c6eb0;
+      }
+  
+      .datepicker-cell.focused:not(.selected) {
+        background: #f1f3f5;
+        color: #241e46;
+      }
+  
+      .datepicker-cell:not(.disabled):hover {
+        color: #241e46;
+      }
+  
+      .datepicker-header {
+        .datepicker-controls {
+          cursor: pointer;
+          padding: 2px 2px 16px;
+  
+          .view-switch, .next-btn, .prev-btn {
+            background: var(--bg-color-drp);
+  
+            color: #fff;
+            cursor: pointer;
+          }
+  
+          .view-switch {
+            font-size: 1rem !important;
+            font-weight: 700;
+          }
+  
+          .btn{
+            border: none;
+          }
+        }
+      }
+  
+      .datepicker-view.datepicker-grid .datepicker-cell {
+        height: 2rem;
+        line-height: 2rem;
+        margin: 0.6rem;
+      }
+    }
+  
+    #timePicker {
+      border-bottom-left-radius: 4px;
+      background-color: var(--bg-color-drp);
+      border-bottom-right-radius: 4px;
+      padding-bottom: 1rem;
+      display: none;
+  
+      p {
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 700;
+        padding: 0 0.9rem 0.9rem;
+      }
+  
+      .colon {
+        color: #EAEAEA;
+        font-size: 3rem;
+        padding: 7px;
+        margin-top: -14px;
+      }
+  
+      .time-input {
+        width: 3rem;
+  
+        input {
+          height: 3rem;
+          background: rgba(99, 195, 209, 0.1);
+          border-radius: 8px;
+          border: none;
+          color: #EAEAEA;
+          font-weight: 700;
+          font-size: 1rem;
+          text-align: center;
+          padding-left: 0;
+        }
+  
+        span {
+          font-weight: 400;
+          font-size: 1rem;
+          padding-top: 5px;
+          text-align: center;
+        }
+      }
+  
+      .time-switcher {
+        margin-top: -30px;
+        margin-left: 8px;
+        background: #2F3457;
+        border: 1px solid #2F3457;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 400;
+  
+        span {
+          padding: 0 12px;
+          cursor: pointer;
+        }
+  
+        span:first-child {
+          border-radius: 8px 8px 0 0;
+        }
+  
+        span:last-child {
+          border-radius: 0 0 8px 8px;
+        }
+  
+        .active {
+          background: #63C3D1;
+        }
+      }
+  
+      .date-picker-divider {
+        color: #fff;
+        width: 84%;
+        height: 0.5px;
+        background: #EAEAEA;
+        margin: 0 auto 1.25rem;
+      }
+    }
+  }
+  
+  #datePlaceholder {
+    position: absolute;
+    width: 100%;
+    height: 5rem;
+    background: rgba(99, 195, 209, 0.1);
+    border-radius: 7px;
+    padding-top: 1.2rem;
+    padding-left: 1rem;
+    font-weight: 400;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    @include mq(desktop, wide) {
+      // width: 265%;
+    }
+    @include mq(mobile, desktop) {
+      width: 100%;
+    }
+  
+    #selectedDate, #selectedTime {
+      font-weight: 400;
+      margin-left: 8px;
+    }
+  
+    #dateDivider {
+      margin: 0 0.9375rem;
+    }
+  }
+  
+  .dateTime-container {
+    display: flex;
+    flex-direction: column;
+  
+    .dateTime-title {
+      margin-bottom: 1rem;
+      font-size: 1.6rem;  
+    }
+  }
+  
+
+
+
+  /** form container **/
+  .o-form-container {
+    align-items: center;
+    margin-top: 3rem;
+    width: 100%;
+  
+    h5 {
+      display: none;
+      color: var(--title-text-color);
+      background-color: var(--contact-bg);
+      width: 90%;
+      padding: 2rem;
+      border-radius: 1.5rem;
+      margin-bottom: 0;
+      &:before {
+        content: url("/images/contact-mobile.svg");
+        position: relative;
+        margin-right: 1rem;
+      }
+      @include mq(mobile, desktop) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+    }
+  
+    #datePlaceholder {
+      padding-top: 0.3rem !important;
+    }
+  
+    .u-form--wrap {
+      width: 100%;
+      max-width: 128rem;
+      padding: 3rem;
+      background: var(--contact-bg);
+      box-shadow: 20px 20px 120px 15px rgb(0 0 0 / 5%);
+      border-radius: 1.5rem;
+      align-items: flex-end;
+      font-size: 1.6rem;
+  
+      .title{
+        font-size:  1.6rem;
+      }
+  
+      @include mq(wide) {
+        max-width: 128rem;
+      }
+  
+      @include mq(desktop, wide) {
+        max-width: 100rem;
+      }
+  
+      @include mq(mobile, desktop) {
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        flex-direction: column;
+      }
+  
+      label {
+        width: 150%;
+        margin-right: 1rem;
+  
+        color: var(--title-text-color);
+  
+        @include mq(md, desktop) {
+          font-size: 1.3rem;
+        }
+  
+        @include mq(mobile, desktop) {
+          width: 100%;
+        }
+  
+        .select2-container {
+          width: 100%;
+          margin-top: 1rem;
+  
+          .select2-selection--single {
+            background: rgba($color: #63c3d1, $alpha: 0.1);
+            border-radius: 1rem;
+            height: 5rem;
+            padding-top: 1rem;
+            border: none;
+            @include mq(mobile,desktop) {
+              padding-top: .4rem;
+            }
+  
+            .select2-selection__rendered {
+              color: var(--title-text-color);
+              padding-left: 2rem;
+              @include mq(mobile,desktop) {
+              padding-left: .4rem;
+            }
+            }
+  
+            .select2-selection__arrow {
+              display: none;
+            }
+          }
+        }
+  
+        #form-date {
+          background: rgba($color: #63c3d1, $alpha: 0.1);
+          height: 5rem;
+          flex-direction: row-reverse;
+          color: white;
+          border: none;
+          border-radius: 10px;
+  
+          &:focus {
+            outline: none;
+            border: none;
+          }
+        }
+      }
+  
+      label:first-child {
+        width: 100%;
+      }
+  
+  
+      .c-button-module-2 {
+        margin-bottom: 0;
+        @include mq(mobile, desktop) {
+          margin-top: 3rem;
+          width: 42%;
+          margin-right: auto;
+          margin-left: auto;
+        }
+  
+  
+        a {
+          max-width: 20rem;
+          @include mq(mobile, desktop) {
+            max-width: 18rem;
+          }
+  
+          span {
+            font-weight: 600;
+  
+            &:after {
+              @include mq(mobile, desktop) {
+                line-height: 5rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    label {
+      .select2-selection--single {
+        background-color: rgba(99, 195, 209, 0.1);
+        border: none;
+        border-radius: .8rem;
+        height: 5.6rem;
+        padding-top: 3%;
+        padding-left: 3%;
+        transition: $transition;
+  
+        &:hover {
+          background-color: #fff;
+          font-weight: 700;
+          transition: $transition;
+        }
+  
+        span {
+          color: #fff;
+          font-weight: 400;
+        }
+  
+        &:hover>span {
+          color: $purple-hover;
+        }
+  
+        .select2-selection__arrow {
+          top: 1.5rem;
+  
+          b {
+            background: url("../images/arrowDown.svg") no-repeat center bottom;
+            background-size: contain;
+            border: none !important;
+            height: 1.6rem !important;
+            width: 1.6rem !important;
+            margin: auto !important;
+            top: 20%;
+            left: -60%;
+            transition: $transition;
+          }
+        }
+      }
+    }
+  
+    .select2-container--open {
+      .select2-selection__arrow {
+        b {
+          top: 25%;
+          transform: rotate(180deg) !important;
+          left: -60%;
+          transition: $transition;
+        }
+      }
+    }
+  
+  }
+  
+  .reveal-form {
+    display: flex !important;
+    border-radius: 0 0 1.5rem 1.5rem !important;
+  
+    &.o-contact__wrapper {
+      flex-direction: column-reverse;
+  
+      .o-contact__box {
+        .contact__num {
+          display: none;
+        }
+  
+        padding: 0 4rem 2rem;
+      }
+    }
+  }
+  .hide-form {
+    display: none !important;
+  }
+  
