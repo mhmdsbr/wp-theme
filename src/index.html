@@ -15,213 +15,186 @@
     gtag("config", "UA-XXXXXX-X");
   </script>
 
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="description" content="" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="description" content=""/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>New Project</title>
 
   <!-- Disable tap highlight on IE -->
-  <meta name="msapplication-tap-highlight" content="no" />
+  <meta name="msapplication-tap-highlight" content="no"/>
 
   <!-- Web Application Manifest -->
-  <link rel="manifest" href="manifest.json" />
+  <link rel="manifest" href="manifest.json"/>
 
   <!-- Add to homescreen for Chrome on Android -->
-  <meta name="mobile-web-app-capable" content="yes" />
-  <meta name="application-name" content="Bugloos.nl" />
+  <meta name="mobile-web-app-capable" content="yes"/>
+  <meta name="application-name" content="Bugloos.nl"/>
   <!-- Add to homescreen for Safari on iOS -->
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  <meta name="apple-mobile-web-app-title" content="Bugloos.nl" />
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+  <meta name="apple-mobile-web-app-title" content="Bugloos.nl"/>
 
   <!-- Tile icon for Win8 (144x144 + tile color) -->
-  <meta name="msapplication-TileImage" content="mstile-150x150.png" />
-  <meta name="msapplication-TileColor" content="#3c3ce5" />
+  <meta name="msapplication-TileImage" content="mstile-150x150.png"/>
+  <meta name="msapplication-TileColor" content="#3c3ce5"/>
 
   <!-- Color the status bar on mobile devices -->
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#ffffff"/>
   <!-- build:css styles/vendor.min.css -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.1.4/tailwind.min.css">
-  <link rel="stylesheet" href="/node_modules/vanillajs-datepicker/dist/css/datepicker.min.css" />
-  <link href="/node_modules/flickity/dist/flickity.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+  <link rel="stylesheet" href="/node_modules/vanillajs-datepicker/dist/css/datepicker.min.css"/>
+  <link href="/node_modules/flickity/dist/flickity.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"/>
   <!-- endbuild -->
   <!-- build:css styles/main.min.css -->
-  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/main.css"/>
   <!-- endbuild -->
 </head>
 
 <body style="overflow-y: scroll;">
-  <div class="h-screen w-screen bg-indigo-400 overflow-hidden absolute flex items-center">
-    <div class="w-screen h-64 absolute top-0 opacity-50 left-0 -my-40 -mx-64 bg-indigo-300 rounded-full"></div>
-    <div class="w-64 h-64 -mx-32 bg-indigo-300 opacity-50 rounded-full"></div>
-    <div class="w-64 h-64 ml-auto relative opacity-50 -mr-32 bg-indigo-300 rounded-full"></div>
-    <div class="w-screen h-64 absolute opacity-50 bottom-0 right-0 -my-40 -mx-64 bg-indigo-300 rounded-full"></div>
-  </div>
+<div class="h-screen w-screen bg-indigo-400 overflow-hidden absolute flex items-center">
+  <div class="w-screen h-64 absolute top-0 opacity-50 left-0 -my-40 -mx-64 bg-indigo-300 rounded-full"></div>
+  <div class="w-64 h-64 -mx-32 bg-indigo-300 opacity-50 rounded-full"></div>
+  <div class="w-64 h-64 ml-auto relative opacity-50 -mr-32 bg-indigo-300 rounded-full"></div>
+  <div class="w-screen h-64 absolute opacity-50 bottom-0 right-0 -my-40 -mx-64 bg-indigo-300 rounded-full"></div>
+</div>
 
-  <div class="main-container container mx-auto h-screen py-16 px-8 relative">
-    <div class="flex w-full rounded-lg h-full lg:overflow-hidden overflow-auto lg:flex-row flex-col shadow-2xl">
-      <div class="task-list container bg-white text-gray-800 flex flex-col">
-        <div class="p-8 shadow-md relative bg-white">
-          <h1 class="font-medium text-lg mt-6">Tasks List</h1>
-          <p class="text-gray-600 text-sm">Here you can manage all your tasks</p>
-          <div class="mt-6 flex">
-            <a href="#openCreateTask" rel="modal:open"
-              class="bg-indigo-500 text-white py-2 text-sm px-3 rounded focus:outline-none">New Task</a>
-          </div>
-          <div class="flex items-center mb-4">
-            <input id="default-radio-1" type="radio" value="" name="default-radio"
-              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-            <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Filter By Deadline</label>
-          </div>
-          <div class="flex items-center">
-            <input checked id="default-radio-2" type="radio" value="" name="default-radio"
-              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-            <label for="default-radio-2" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Filter By Status</label>
-          </div>
+<div class="main-container container mx-auto h-screen py-16 px-8 relative">
+  <div class="flex w-full rounded-lg h-full lg:overflow-hidden overflow-auto lg:flex-row flex-col shadow-2xl">
+    <div class="task-list container bg-white text-gray-800 flex flex-col">
+      <div class="p-8 shadow-md relative bg-white">
+        <h1 class="font-medium text-lg mt-6">Tasks List</h1>
+        <p class="text-gray-600 text-sm">Here you can manage all your tasks</p>
+        <div class="mt-6 flex">
+          <a onclick="taskTracker.methods.onOpenNewTaskModalClick()"
+             class="bg-indigo-500 text-white py-2 text-sm px-3 rounded focus:outline-none">New Task</a>
         </div>
-        <div class="task-item overflow-auto flex-grow">
-          <div class="bg-gray-100 px-8 py-6 flex items-center border-b border-gray-300">
-            <div class="flex ml-4">
-              <div class="flex flex-col pl-4">
-                <h2 class="font-medium text-sm">Create Wireframe</h2>
-                <h3 class="text-gray-500 text-sm">#UIUX</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                  industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-                  scrambled it to make a type specimen book.</p>
-              </div>
-            </div>
-            <a href="#openSingleTask" rel="modal:open"
-              class="text-gray-500 flex items-center text-sm focus:outline-none rounded ml-auto py-2 leading-none">
-              Info
-            </a>
-          </div>
+        <div class="flex items-center mb-4">
+          <input id="default-radio-1"  onchange="taskTracker.methods.onFilterChange(this)" type="radio" value="deadline" name="default-radio"
+                 class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+          <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Filter By
+            Deadline</label>
+        </div>
+        <div class="flex items-center">
+          <input checked id="filterByStatus" onchange="taskTracker.methods.onFilterChange(this)" type="radio" value="status" name="default-radio"
+                 class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+          <label for="filterByStatus" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Filter By
+            Status</label>
+        </div>
+        <div class="flex items-center">
+          <input checked id="resetFilter" onchange="taskTracker.methods.onFilterChange(this)" type="radio" value="reset" name="default-radio"
+                 class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+          <label for="resetFilter" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+            Reset Filter</label>
         </div>
       </div>
-    </div>
-    <form id="openCreateTask" class="taskForm w-full max-w-lg">
-      <div class="flex flex-wrap -mx-3 mb-6">
-        <div class="w-full px-3 mb-6 md:mb-0">
-          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="taskTitle">
-            Task Title
-          </label>
-          <input
-            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-            id="taskTitle" type="text" placeholder="Task Title">
-        </div>
-        <div class="w-full px-3">
-          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="taskTag">
-            Task Tag
-          </label>
-          <input
-            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-            id="taskTag" type="text" placeholder="Task Tag">
-        </div>
-        <div class="w-full px-3">
-          <label for="taskDesc" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Task
-            Description</label>
-          <textarea id="taskDesc" rows="4"
-            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="Write your description here..."></textarea>
-        </div>
-        <div class="w-full px-3">
-          <!-- <label class="dateTime-container">
-            <span class="dateTime-title">Pick a Date and Time</span>
-            <span style="position: relative;display: flex;">
-                <div id="datePlaceholder">As soon as possible</div>
-                <input type="text" autocomplete="off" name="datepicker" id="form-date" class="date-picker-main-input"/>
-              </span>
-            <span id="timePicker" style="display: none;">
-                <div class="date-picker-divider"></div>
-                <p class="m-0">Enter Time</p>
-                <div class="d-flex align-items-center justify-content-center">
-                  <div class="d-flex flex-column time-input" id="hour">
-                    <input type="text" autocomplete="off" minlength="1" maxlength="2">
-                    <span>Hour</span>
-                  </div>
-                  <span class="colon">:</span>
-                  <div class="d-flex flex-column time-input" id="minute">
-                    <input type="text" autocomplete="off" minlength="1" maxlength="2">
-                    <span>Minute</span>
-                  </div>
-                  <div class="d-flex flex-column time-switcher">
-                    <span data-value="AM">AM</span>
-                    <span data-value="PM">PM</span>
-                  </div>
-                </div>
-              </span>
-          </label> -->
-        </div>
-        <div class="w-full px-3">
-          <button
-            class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-            type="button">
-            Save Task
-          </button>
-        </div>
+
+
+      <div class="task-item overflow-auto flex-grow" id="taskList">
       </div>
-    </form>
-    <div id="openSingleTask" class="task-single container bg-white text-gray-800 flex flex-col">
-      <label for="status" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a
-        status</label>
-      <select id="status"
-        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-        <option selected>In Progress</option>
-        <option value="US">Done</option>
-      </select>
-      <label class="dateTime-container">
-        <span class="dateTime-title">Pick a Date and Time</span>
-        <span style="position: relative;display: flex;">
-          <input type="text" autocomplete="off" name="datepicker" id="form-date" class="date-picker-main-input" />
-        </span>
-        <span id="timePicker" style="display: none;">
-          <div class="date-picker-divider"></div>
-          <p class="m-0">Enter Time</p>
-          <div class="d-flex align-items-center justify-content-center">
-            <div class="d-flex flex-column time-input" id="hour">
-              <input type="text" autocomplete="off" minlength="1" maxlength="2">
-              <span>Hour</span>
-            </div>
-            <span class="colon">:</span>
-            <div class="d-flex flex-column time-input" id="minute">
-              <input type="text" autocomplete="off" minlength="1" maxlength="2">
-              <span>Minute</span>
-            </div>
-            <div class="d-flex flex-column time-switcher">
-              <span data-value="AM">AM</span>
-              <span data-value="PM">PM</span>
-            </div>
-          </div>
-        </span>
-      </label>
-      <div class="overflow-auto flex-grow">
-        <div class="bg-gray-100 px-8 py-6 flex items-center border-b border-gray-300">
-          <div class="flex ml-4">
-            <div class="flex flex-col pl-4">
-              <h2 class="font-medium text-sm">Create Wireframe</h2>
-              <h3 class="text-gray-500 text-sm">#UIUX</h3>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-                scrambled it to make a type specimen book.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+
+
     </div>
   </div>
-  <!-- build:js scripts/vendor.min.js -->
-  <script src="/node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="scripts/jquery-migrate-3.0.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-  <script src="https://unpkg.com/flowbite@1.5.5/dist/datepicker.js"></script>
-  <script src="/node_modules/vanillajs-datepicker/dist/js/datepicker-full.min.js"></script>
-  <!-- endbuild -->
-  <!-- build:js scripts/main.min.js -->
-  <script src="scripts/main.js"></script>
-  <script src="scripts/date-time-picker.js"></script>
-  <!-- endbuild -->
+  <form id="openCreateTask" class="taskForm w-full max-w-lg">
+    <div class="flex flex-wrap -mx-3 mb-6">
+      <div class="w-full px-3 mb-6 md:mb-0">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="taskTitle">
+          Task Title
+        </label>
+        <input
+          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+          id="taskTitle" type="text" required placeholder="Task Title">
+      </div>
+      <div class="w-full px-3">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="taskTag">
+          Task Tag
+        </label>
+        <input
+          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          id="taskTag" type="text" placeholder="Task Tag">
+      </div>
+      <div class="w-full px-3">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="taskTag">
+          Deadline
+        </label>
+        <input
+          type="datetime-local"
+          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          id="taskDeadline" type="text" placeholder="Task Tag">
+      </div>
+      <div class="w-full px-3">
+        <label for="taskDesc" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Task
+          Description</label>
+        <textarea id="taskDesc" rows="4"
+                  class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="Write your description here..."></textarea>
+      </div>
+      <div class="w-full px-3">
+      </div>
+      <div class="w-full px-3">
+        <button
+          class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+          onclick="taskTracker.methods.onSaveTaskClick()"
+          type="submit">
+          Save Task
+        </button>
+        <button
+          class="shadow bg-gray-500 hover:bg-gray-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+          onclick="taskTracker.methods.onCloseTaskModalClick()"
+          type="button">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </form>
+  <div id="openSingleTask" class="task-single container bg-white text-gray-800 flex flex-col">
+    <label for="status" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a
+      status</label>
+    <select id="status"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+      <option selected value="InProgress">In Progress</option>
+      <option value="Done">Done</option>
+    </select>
+    <div class="w-full px-3">
+      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="taskTag">
+        Deadline
+      </label>
+      <input
+        type="datetime-local"
+        class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+        id="taskNewDeadline" type="text" placeholder="Task Tag">
+    </div>
+    <div class="overflow-auto flex-grow" id="taskDetailContainer">
+    </div>
+    <div class="w-full px-3">
+      <button
+        class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+        onclick="taskTracker.methods.onUpdateTaskClick()"
+        type="button">
+        Save
+      </button>
+      <button
+        class="shadow bg-gray-500 hover:bg-gray-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+        onclick="taskTracker.methods.onCloseTaskModalClick()"
+        type="button">
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+<!-- build:js scripts/vendor.min.js -->
+<script src="/node_modules/jquery/dist/jquery.min.js"></script>
+<script src="scripts/jquery-migrate-3.0.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<script src="https://unpkg.com/flowbite@1.5.5/dist/datepicker.js"></script>
+<script src="/node_modules/vanillajs-datepicker/dist/js/datepicker-full.min.js"></script>
+<!-- endbuild -->
+<!-- build:js scripts/main.min.js -->
+<script src="scripts/main.js"></script>
+<!-- endbuild -->
 </body>
 
 </html>
